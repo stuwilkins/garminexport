@@ -374,12 +374,14 @@ class GarminClient(object):
         :rtype: int
         """
 
-        if isinstance(file, basestring):
+        if isinstance(file, str):
             file = open(file, "rb")
 
         # guess file type if unspecified
-        fn = os.path.basename(file.name)
-        _, ext = os.path.splitext(fn)
+        # fn = os.path.basename(file.name)
+        # _, ext = os.path.splitext(fn)
+        fn = 'dummy'
+
         if format is None:
             if ext.lower() in ('.gpx','.tcx','.fit'):
                 format = ext.lower()[1:]
